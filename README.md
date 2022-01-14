@@ -23,10 +23,8 @@ The .NET Extension Pack (specifically the .NET Interactive Notebooks Extension) 
 
 ## Creating a New Play
 * View > Command Palette... > .NET Interactive: Create new blank notebook
-* View > Command Palette... > Notebook: Select Notebook Kernel
-    * .NET Interactive
-    * Create as .ipynb
-        * Notebook: Change Cell Language
+  * Create as .ipynb
+    * Default Language: PowerShell
         
 ## References
 Crafting the InfoSec Playbook: Security Monitoring and Incident Response Master Plan  
