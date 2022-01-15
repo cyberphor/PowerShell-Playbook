@@ -1,4 +1,4 @@
-## Threat Hunting
+# Threat Hunting Overview
 Threat hunting is the process of proactively searching for threat actors who have evaded detection and infiltrated an organization’s enterprise. A threat hunt is made of four components: the trigger, the hypothesis, the investigation, and the response. Threat hunting is a sub-process of incident handling and complements the organization’s security monitoring program.
 
 ### Threat Actor
