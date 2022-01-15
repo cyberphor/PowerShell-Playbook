@@ -1,6 +1,6 @@
 ﻿# Playbook Elements
 ### Playbook Identifer  
-**Format**
+**Format**  
 Option 1 (Credit: Crafting the InfoSec Playbook)
 ```pwsh
 $UniqueId-$HF|$INV-$EventSource-$ReportCategory: $Description
