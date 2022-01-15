@@ -1,4 +1,6 @@
-﻿# Dependencies
+# Setup
+
+### Dependencies
 **.NET 6 Software Development Kit (SDK)**  
 The .NET 6 SDK is required to run the .NET Extension Pack in Visual Studio Code version 1.63.2.  
 [https://dotnet.microsoft.com/en-us/download](https://dotnet.microsoft.com/en-us/download)  
@@ -14,3 +16,12 @@ The Jupyter Extension enables you to read and write Jupyter Notebook (.ipynb) fi
 **.NET Extension Pack for Visual Studio Code**  
 The .NET Extension Pack (specifically the .NET Interactive Notebooks Extension) enables you to execute PowerShell queries via Jupyter Notebook (.ipynb) files.  
 [https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.vscode-dotnet-pack](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.vscode-dotnet-pack)
+
+### Misc
+**Installing the Visual Studio Code Extensions**  
+* Code > Extensions > "Ellipsis Symbol" (Views and More Actions...) > Install from VSIX...
+
+**Creating a New Play**  
+* View > Command Palette... > .NET Interactive: Create new blank notebook
+  * Create as .ipynb
+    * Default Language: PowerShell
