@@ -1,7 +1,7 @@
 # Threat Hunting Playbooks
-Threat hunting playbooks developed using PowerShell, Markdown, and Jupyter Notebooks. 
+Written using PowerShell, Markdown, and Jupyter Notebooks. 
       
-## References
+**References**  
 Crafting the InfoSec Playbook: Security Monitoring and Incident Response Master Plan  
 [https://www.oreilly.com/library/view/crafting-the-infosec/9781491913598/](https://www.oreilly.com/library/view/crafting-the-infosec/9781491913598/)  
 
