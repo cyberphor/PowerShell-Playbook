@@ -1,5 +1,5 @@
-# PowerShell Playbook
-Jupyter Notebook (.ipynb) files, PowerShell queries, and analysis procedures.
+# Threat Hunting Playbooks
+Threat hunting playbooks developed using PowerShell, Markdown, and Jupyter Notebooks. 
 
 ## Dependencies
 **.NET 6 Software Development Kit (SDK)**  
