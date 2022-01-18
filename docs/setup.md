@@ -20,9 +20,3 @@ The .NET Interactive Notebooks Extension allows you to execute PowerShell querie
 
 **PowerShell**  
 [https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)
-
-### Misc
-**How to Create a New Notebook**  
-* View > Command Palette... > .NET Interactive: Create new blank notebook
-  * Create as .ipynb
-    * Default Language: PowerShell
