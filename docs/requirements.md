@@ -1,7 +1,7 @@
-# Setup
+# Requirements
 
 **Visual Studio Code**  
-Visual Studio Code is an Integrated Development Environment (IDE) tool. It allows you to read, write, and execute code. 
+Visual Studio Code is an Integrated Development Environment (IDE) platform. It allows you to read, write, and execute code. 
 [https://code.visualstudio.com/Download](https://code.visualstudio.com/Download)  
 
 **PowerShell Language Support for Visual Studio Code**  
