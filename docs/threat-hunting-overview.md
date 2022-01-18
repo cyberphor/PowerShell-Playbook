@@ -30,8 +30,8 @@ During an investigation, threat hunters will use the data sources available to d
 * Network-Based Data Sources: alerts, flow records, client/server transactions, traffic statistics, and Packet Capture (PCAP) files. 
 * Host-Based Data Sources: processes, network connections, scheduled tasks, logs, etc. 
 
-**Indicators of Attack**
-* Text goes here.
+**Indicators of Attack**  
+Indicators of Attack (IOAs) "focus on detecting the intent of what an attacker is trying to accomplish, regardless of the malware or exploit used in an attack. Just like AV signatures, an IOC-based detection approach cannot detect the increasing threats from malware-free intrusions and zero-day exploits" ([https://www.crowdstrike.com/cybersecurity-101/indicators-of-compromise/ioa-vs-ioc/](https://www.crowdstrike.com/cybersecurity-101/indicators-of-compromise/ioa-vs-ioc/)).
 
 ### Response
 If a hypothesis is proven to be true and a threat actor has been discovered, the organization must immediately begin conducting incident response procedures. During the Post-Incident Activity phase of their response, they should also discuss and implement lessons learned during the threat hunt. 
