@@ -1,5 +1,5 @@
 # Threat Hunting Notebooks
-Written using Virtual Studio Code, .NET Interactive Notebooks, Markdown, and PowerShell. 
+Written using .NET Interactive Notebooks, Markdown, and PowerShell. 
 
 **References**  
 Crafting the InfoSec Playbook: Security Monitoring and Incident Response Master Plan  
