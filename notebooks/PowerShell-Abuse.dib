@@ -1,0 +1,50 @@
+#!markdown
+
+# PowerShell Abuse
+
+#!markdown
+
+## Overview
+
+#!markdown
+
+**Task.** Query for PowerShell abuse using PowerShell.  
+**Purpose.** PowerShell is a command-line and scripting interface within the Windows operating system. Adversaries abuse PowerShell to download and execute malicious code.  
+**Conditions.** PowerShell Remoting and Script Block Logging is enabled.  
+**Standard.** You were able to perform a query and determine if suspicious or malicious activity has occurred.
+
+#!markdown
+
+## Setup
+
+#!pwsh
+
+$Computers = @("localhost")
+
+filter Read-WinEvent {
+    $WinEvent = [ordered]@{} 
+    $XmlData = [xml]$_.ToXml()
+    $SystemData = $XmlData.Event.System
+    $SystemData | 
+    Get-Member -MemberType Properties | 
+    Select-Object -ExpandProperty Name |
+    ForEach-Object {
+        $Field = $_
+        if ($SystemData[$Field].'#text') {
+            $WinEvent.$Field = $SystemData[$Field].'#text'
+        } else {
+            $SystemData[$Field]  | 
+            Get-Member -MemberType Properties | 
+            Select-Object -ExpandProperty Name |
+            ForEach-Object { 
+                $WinEvent.$Field = @{}
+                $WinEvent.$Field.$_ = $SystemData[$Field].$_
+            }
+        }
+    }
+    $XmlData.Event.EventData.Data |
+    ForEach-Object { 
+        $WinEvent.$($_.Name) = $_.'#text'
+    }
+    return New-Object -TypeName PSObject -Property $WinEvent
+}
