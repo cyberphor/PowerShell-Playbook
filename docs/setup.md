@@ -1,7 +1,7 @@
 # Setup
 
 **Visual Studio Code**  
-Visual Studio Code is a text-editor.  
+Visual Studio Code is an Integrated Development Environment (IDE) tool. It allows you to read, write, and execute code. 
 [https://code.visualstudio.com/Download](https://code.visualstudio.com/Download)  
 
 **PowerShell Language Support for Visual Studio Code**  
@@ -9,7 +9,7 @@ The "PowerShell Language Support for Visual Studio Code" extension provides Powe
 [https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)
 
 **.NET Extension Pack for Visual Studio Code**  
-The ".NET Extension Pack for Visual Studio Code" includes a number of extensions necessary to use the playbooks in this GitHub repository. For example, the "Jupyter Extension for Visual Studio Code" enables you to read/write Jupyter Notebook (.ipynb) files while the ".NET Interactive Notebooks" extension allows you to execute PowerShell queries from them.  
+The ".NET Extension Pack for Visual Studio Code" includes a number of extensions necessary to use the playbooks in this GitHub repository. For example, the "Jupyter Extension for Visual Studio Code" enables you to read and write Jupyter Notebook (.ipynb) files while the ".NET Interactive Notebooks" extension allows you to execute PowerShell commands from them.  
 [https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.vscode-dotnet-pack](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.vscode-dotnet-pack)
 
 **.NET Software Development Kit (SDK)**  
