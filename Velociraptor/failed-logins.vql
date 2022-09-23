@@ -31,12 +31,11 @@ filter Read-WinEvent {
 
 Get-WinEvent -FilterHashTable @{LogName='security';Id=4625} |
 Read-WinEvent |
-Select TimeCreated, TargetUserName, LogonType
+Select TimeCreated, TargetUserName, LogonType |
+ConvertTo-Json
 '''
 
-LET PowerShellOutput = SELECT * FROM execve(
+SELECT parse_json(data=Foo) FROM execve(
   argv=[
     "powershell", "-ExecutionPolicy", "Unrestricted", "-encodedCommand", base64encode(string = utf16_encode(string = PowerShell))]
   )
-
-SELECT * FROM PowerShellOutput 
