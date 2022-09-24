@@ -51,4 +51,10 @@ ConvertTo-Json
 /*
 ## Results
 */
-SELECT * FROM source(artifact = "Windows.System.PowerShell")
+SELECT
+  Fqdn AS Hostname,
+  parse_json(data = Stdout).SourceAddress AS SoureAddress,
+  parse_json(data = Stdout).SourcePort AS SourcePort,
+  parse_json(data = Stdout).DestAddress AS DestAddress,
+  parse_json(data = Stdout).DestPort AS DestPort
+  FROM source(artifact = "Windows.System.PowerShell")
