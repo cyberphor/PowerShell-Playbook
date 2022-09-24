@@ -1,4 +1,16 @@
-LET PowerShell = '''
+/*
+# Source IP
+*/
+
+/*
+## Query
+*/
+```
+$Value = ""
+$Field = "SourceAddress"
+$LogName = "Security"
+$Id = 5156
+
 filter Read-WinEvent {
     $WinEvent = [ordered]@{} 
     $XmlData = [xml]$_.ToXml()
@@ -29,13 +41,14 @@ filter Read-WinEvent {
     return New-Object -TypeName PSObject -Property $WinEvent
 }
 
-Get-WinEvent -FilterHashTable @{LogName='security';Id=4625} |
+Get-WinEvent -FilterHashTable @{LogName=$LogName;Id=$Id} |
 Read-WinEvent |
-Select TimeCreated, TargetUserName, LogonType |
+Where-Object { $_.$Field -eq $Value } |
+Select-Object -First 1
 ConvertTo-Json
 '''
 
-SELECT parse_json(data=Foo) FROM execve(
-  argv=[
-    "powershell", "-ExecutionPolicy", "Unrestricted", "-encodedCommand", base64encode(string = utf16_encode(string = PowerShell))]
-  )
+/*
+## Results
+*/
+SELECT * FROM source(artifact = "Windows.System.PowerShell")
