@@ -12,13 +12,8 @@ Get-Service Sysmon64 | ConvertFrom-Json
 /*
 ## Results
 */
-LET JSON = SELECT
+SELECT
   Fqdn AS Hostname,
-  parse_json(data = Stdout) AS PowerShell
+  parse_json(data = Stdout).DisplayName AS DisplayName,
+  parse_json(data = Stdout).Name AS Status
   FROM source(artifact = "Windows.System.PowerShell")
-
-SELECT 
-  Hostname,
-  PowerShell.DisplayName AS DisplayName, 
-  PowerShell.Status AS Status 
-  FROM JSON
