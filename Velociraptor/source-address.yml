@@ -57,7 +57,7 @@ sources:
         SELECT * FROM execve(
           argv = ["powershell","-ExecutionPolicy","Unrestricted","-EncodedCommand",base64encode(string = utf16_encode(string = Cmdlets)]
         )
-      notebook:
+    notebook:
       - type: VQL
         template: |
           /*
