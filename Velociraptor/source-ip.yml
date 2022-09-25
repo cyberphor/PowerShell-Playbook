@@ -1,0 +1,70 @@
+name: Custom.Artifact
+description: |
+  Description goes here.
+type: CLIENT
+required_permissions:
+  - EXECVE
+precondition:
+  SELECT OS FROM info() WHERE OS = 'windows'
+parameters:
+  - name: SourceAddress
+    default: 8.8.8.8
+sources:
+  - name: SourceIP
+    description: Description goes here
+    query: |
+      LET Command = '''
+        $Value = "8.8.8.8"
+        $Field = "SourceAddress"
+        $LogName = "Security"
+        $Id = 5156
+
+        filter Read-WinEvent {
+            $WinEvent = [ordered]@{} 
+            $XmlData = [xml]$_.ToXml()
+            $SystemData = $XmlData.Event.System
+            $SystemData | 
+            Get-Member -MemberType Properties | 
+            Select-Object -ExpandProperty Name |
+            ForEach-Object {
+                $Field = $_
+                if ($Field -eq 'TimeCreated') {
+                    $WinEvent.$Field = Get-Date -Format 'yyyy-MM-dd hh:mm:ss' $SystemData[$Field].SystemTime
+                } elseif ($SystemData[$Field].'#text') {
+                    $WinEvent.$Field = $SystemData[$Field].'#text'
+                } else {
+                    $SystemData[$Field]  | 
+                    Get-Member -MemberType Properties | 
+                    Select-Object -ExpandProperty Name |
+                    ForEach-Object { 
+                        $WinEvent.$Field = @{}
+                        $WinEvent.$Field.$_ = $SystemData[$Field].$_
+                    }
+                }
+            }
+            $XmlData.Event.EventData.Data |
+            ForEach-Object { 
+                $WinEvent.$($_.Name) = $_.'#text'
+            }
+            return New-Object -TypeName PSObject -Property $WinEvent
+        }
+
+        Get-WinEvent -FilterHashTable @{LogName=$LogName;Id=$Id} |
+        Read-WinEvent |
+        Where-Object { $_.$Field -eq $Value } |
+        Select-Object -First 1
+        ConvertTo-Json
+        '''
+      notebook:
+      - type: VQL
+        template: |
+          /*
+          ## Results
+          */
+          SELECT
+            Fqdn AS Hostname,
+            parse_json(data = Stdout).SourceAddress AS SoureAddress,
+            parse_json(data = Stdout).SourcePort AS SourcePort,
+            parse_json(data = Stdout).DestAddress AS DestAddress,
+            parse_json(data = Stdout).DestPort AS DestPort
+            FROM source(artifact = "Custom.Artifact/SourceIP")
