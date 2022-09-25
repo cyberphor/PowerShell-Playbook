@@ -1,9 +1,9 @@
 # Threat Hunting Notebooks
-Threat hunting notebooks written in Markdown, PowerShell, the Velociraptor Query Language (VQL), and IPython. 
+Threat hunting notebooks written in Markdown, PowerShell, IPython, and the Velociraptor Query Language (VQL)
 
 ## Notebooks
-* [Velociraptor Artifacts](/Velociraptor-Notebooks)
 * [Jupyter Notebooks](/Jupyter-Notebooks)
+* [Velociraptor Artifacts](/Velociraptor-Notebooks)
 
 ## Read the Docs
 * [Threat Hunting Overview](/Docs/threat-hunting-overview.md)
