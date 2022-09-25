@@ -1,4 +1,4 @@
-name: Custom.Artifact
+name: Custom.Artifact.SourceAddress
 description: |
   Description goes here.
 type: CLIENT
@@ -10,9 +10,7 @@ parameters:
   - name: SourceAddress
     default: 8.8.8.8
 sources:
-  - name: SourceAddress
-    description: Description goes here
-    query: |
+  - query: |
       LET Cmdlets = format(format = '''
         $Value = "%s"
         $Field = "SourceAddress"
@@ -69,4 +67,4 @@ sources:
             parse_json(data = Stdout).SourcePort AS SourcePort,
             parse_json(data = Stdout).DestAddress AS DestAddress,
             parse_json(data = Stdout).DestPort AS DestPort
-            FROM source(artifact = "Custom.Artifact/SourceAddress")
+            FROM source(artifact = "Custom.Artifact.SourceAddress")

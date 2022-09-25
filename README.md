@@ -1,7 +1,14 @@
 # Threat Hunting Notebooks
-Written using .NET Interactive Notebooks, Markdown, and PowerShell. 
+Threat hunting notebooks written in Markdown, PowerShell, the Velociraptor Query Language (VQL), and IPython. 
+* [Velociraptor Artifacts](/Velociraptor-Notebooks)
+* [Jupyter Notebooks](/Jupyter-Notebooks)
 
-**References**  
+## Read the Docs
+* [Threat Hunting Overview](/Docs/threat-hunting-overview.md)
+* [Notebook Elements](/Docs/notebook-elements.md)
+* [Running Interactive PowerShell Notebooks](/Docs/running-interactive-powershell-notebooks.md)
+
+## References  
 Crafting the InfoSec Playbook: Security Monitoring and Incident Response Master Plan  
 [https://www.oreilly.com/library/view/crafting-the-infosec/9781491913598/](https://www.oreilly.com/library/view/crafting-the-infosec/9781491913598/)  
 

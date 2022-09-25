@@ -1,4 +1,4 @@
-# Requirements
+# Running Interactive PowerShell Notebooks
 
 **Visual Studio Code**  
 [https://code.visualstudio.com/download](https://code.visualstudio.com/download)  
