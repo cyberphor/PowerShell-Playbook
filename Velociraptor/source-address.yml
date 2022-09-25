@@ -10,15 +10,14 @@ parameters:
   - name: SourceAddress
     default: 8.8.8.8
 sources:
-  - name: SourceIP
+  - name: SourceAddress
     description: Description goes here
     query: |
-      LET Command = '''
-        $Value = "8.8.8.8"
+      LET Cmdlets = format(format = '''
+        $Value = "%s"
         $Field = "SourceAddress"
         $LogName = "Security"
         $Id = 5156
-
         filter Read-WinEvent {
             $WinEvent = [ordered]@{} 
             $XmlData = [xml]$_.ToXml()
@@ -48,13 +47,16 @@ sources:
             }
             return New-Object -TypeName PSObject -Property $WinEvent
         }
-
         Get-WinEvent -FilterHashTable @{LogName=$LogName;Id=$Id} |
         Read-WinEvent |
         Where-Object { $_.$Field -eq $Value } |
         Select-Object -First 1
         ConvertTo-Json
-        '''
+        ''', args = SourceAddress)
+        
+        SELECT * FROM execve(
+          argv = ["powershell","-ExecutionPolicy","Unrestricted","-EncodedCommand",base64encode(string = utf16_encode(string = Cmdlets)]
+        )
       notebook:
       - type: VQL
         template: |
@@ -67,4 +69,4 @@ sources:
             parse_json(data = Stdout).SourcePort AS SourcePort,
             parse_json(data = Stdout).DestAddress AS DestAddress,
             parse_json(data = Stdout).DestPort AS DestPort
-            FROM source(artifact = "Custom.Artifact/SourceIP")
+            FROM source(artifact = "Custom.Artifact/SourceAddress")
