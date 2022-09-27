@@ -3,7 +3,7 @@ Threat hunting notebooks written in Markdown, PowerShell, IPython, and the Veloc
 
 ## Notebooks
 * [Jupyter Notebooks](/Jupyter-Notebooks)
-* [Velociraptor Artifacts](/Velociraptor-Notebooks)
+* [Velociraptor Artifacts](/Velociraptor-Artifacts)
 
 ## Read the Docs
 * [Threat Hunting Overview](/Docs/threat-hunting-overview.md)
