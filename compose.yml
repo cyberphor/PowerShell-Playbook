@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  threat-hunting-notebooks:
+    image: threat-hunting-notebooks:latest
+    build: .
+    ports: 
+    - 8888:8888

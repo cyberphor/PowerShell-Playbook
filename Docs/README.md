@@ -1,5 +1,6 @@
-# Running Interactive PowerShell Notebooks
+## Notebooks
 
+### Software Requirements
 **Visual Studio Code**  
 [https://code.visualstudio.com/download](https://code.visualstudio.com/download)  
 
@@ -11,3 +12,22 @@
 
 **PowerShell Language Support for Visual Studio Code**  
 [https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)
+
+### Notebook Elements
+**Details**  
+```bash
+# task
+# purpose
+# conditions
+# standard
+```
+
+**Setup**  
+```bash
+# variables go here
+```
+
+**Query & Analysis**  
+```bash
+# code and comments go here
+```
