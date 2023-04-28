@@ -18,5 +18,6 @@ docker image prune -f
 docker container prune -f
 
 # ???
+docker build . -t <image:tag>
 docker run -it <image:tag> /bin/bash
 ```
